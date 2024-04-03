@@ -1,6 +1,5 @@
 from tkinter import * 
 from PIL import ImageTk
-from Pantalla_principal import Pantallas
 from Mensajes import Mensajes
 class  Login:
     def __init__(self,ventana):
@@ -9,8 +8,8 @@ class  Login:
         self.ventana.geometry("1200x630+100+50") 
         
         #fondo imagen
-        self.bg=ImageTk.PhotoImage(file="2.jpg")
-        self.bg_image= Label(self.ventana, image=self.bg,).place(x=0, y=0, relwidth=1, relheight=1 )
+        #self.bg=ImageTk.PhotoImage(file="Imagenes/2.jpg")
+        #self.bg_image= Label(self.ventana, image=self.bg,).place(x=0, y=0, relwidth=1, relheight=1 )
         
         #Marco del login
         self.Marco_login= Frame(ventana, bg="white")
@@ -27,8 +26,8 @@ class  Login:
         self.leb_contraseña= Label(self.Marco_login, text="Contraseña", font=("Roboto", 15, "bold"), fg="grey",bg="white").place(x=90, y=170)
         self.contraseña= Entry(self.Marco_login,font=("Roboto", 15), bg="#E7E6E6",show="*")
         self.contraseña.place(x=90, y=200, width=320,height=35)
-        #botonsillo
         
+        #botonsillo       
         self.button=Button(self.Marco_login,command=lambda:self.Validar_login(),cursor="hand2",text="Iniciar sesion", bd=0,font=("Roboto", 15), bg="#00FF00", fg="white").place(x=165, y=240,width=180,height=40)
         #Registrarse= Button(Marco_login,command=self.verificar_funcion,cursor="hand2",text="Registrarse", bd=0,font=("Roboto", 15), bg="#00FF00", fg="white").place(x=90, y=240,width=100,height=40)
         #cancelar= Button(Marco_login,command=self.verificar_funcion,cursor="hand2",text="Cancelar", bd=0,font=("Roboto", 15), bg="#00FF00", fg="white").place(x=200, y=240,width=80,height=40)
@@ -52,6 +51,7 @@ class  Login:
             else:
                 #messagebox.showinfo("Bienvenido", f"Bienvenido {self.Nombre_usuario.get()}")
                 mensaje="Bienvenido"
+                ventana.withdraw()
             obj_m=Mensajes()
             obj_m.Mensaje_login(mensaje)
         

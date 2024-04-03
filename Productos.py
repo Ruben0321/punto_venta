@@ -7,13 +7,13 @@ class Productos:
         self.nombre=p_nombre
         self.pedido= p_pedi
         self.talla=p_talla
-    def consultarClie(self):
+    def consultarPro(self):
         return self
-    def eliminarClie(self):
+    def eliminarPro(self):
         return self
-    def modificarClie(self):
+    def modificarPro(self):
         return self
-    def mostrarClie(self):
+    def mostrarPro(self):
         return self
-    def registrarClie(self):
+    def registrarPro(self):
         return self
